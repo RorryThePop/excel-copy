@@ -1,3 +1,5 @@
+import './styles/index.scss';
+
 const shieldUp = {
   a: 2,
   b: 3,
