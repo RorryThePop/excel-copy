@@ -1,14 +1,5 @@
-import './styles/index.scss';
+import { render } from 'react-dom';
 
-const shieldUp = {
-  a: 2,
-  b: 3,
-  c: 4,
-};
-const shieldDown = {
-  ...shieldUp,
-  d: 5,
-  e: 6,
-};
-console.log(shieldUp);
-console.log(shieldDown);
+import App from './components/App';
+
+render(<App />, document.getElementById('root'));
