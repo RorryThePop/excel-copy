@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RorryThePop/excel-copy.git"
+    "url": "git+https://github.com/RorryThePop/webpack-5.git"
   },
   "keywords": [],
   "author": "Yury Arakelove",
   "license": "ISC",
   "bugs": {
-    "url": "ttps://github.com/RorryThePop/excel-copy/issues"
+    "url": "https://github.com/RorryThePop/webpack-5/issues"
   },
-  "homepage": "ttps://github.com/RorryThePop/excel-copy#readme",
+  "homepage": "https://github.com/RorryThePop/webpack-5#readme",
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
