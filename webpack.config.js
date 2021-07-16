@@ -1,8 +1,11 @@
+/* eslint-disable max-len */
 const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 let mode = 'development';
 let target = 'web';
@@ -12,6 +15,15 @@ const plugins = [
   new HtmlWebpackPlugin({
     template: './src/index.html',
   }),
+  new CopyPlugin({
+    patterns: [
+      {
+        from: path.resolve(__dirname, './src/favicon.ico'),
+        to: path.resolve(__dirname, 'dist'),
+      },
+    ],
+  }),
+  new ESLintPlugin(),
 ];
 
 if (process.env.NODE_ENV === 'production') {
@@ -90,10 +102,19 @@ module.exports = {
              * From the docs: When set, the given directory will be used
              * to cache the results of the loader. Future webpack builds
              * will attempt to read from the cache to avoid needing to run
+             // eslint-disable-next-line max-len
              * the potentially expensive Babel recompilation process on each run.
              */
             cacheDirectory: true,
           },
+        },
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          // eslint options (if necessary)
         },
       },
     ],
