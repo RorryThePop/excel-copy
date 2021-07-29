@@ -128,6 +128,10 @@ module.exports = {
 
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@core': path.resolve(__dirname, 'src/core'),
+    },
   },
 
   // required if using webpack-dev-server
