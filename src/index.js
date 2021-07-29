@@ -1,10 +1,12 @@
-import './module';
 import './styles/index.scss';
+import { Excel } from '@/components/Excel/Excel';
+import { Header } from '@/components/header/Header';
+import { ToolBar } from '@/components/toolbar/ToolBar';
+import { Formula } from '@/components/formula/Formula';
+import { Table } from '@/components/table/Table';
 
-console.log('Working!');
+const excel = new Excel('#app', {
+  components: [Header, ToolBar, Formula, Table],
+});
 
-const val = document.getElementById('root');
-const text = document.createElement('p');
-const textValue = document.createTextNode('assalam');
-const a = val.appendChild(text);
-a.appendChild(textValue);
+excel.render();
